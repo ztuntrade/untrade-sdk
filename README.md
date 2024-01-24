@@ -1,4 +1,5 @@
 # Untrade SDK
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 
 ## Installation
 Execute the git clone command:
