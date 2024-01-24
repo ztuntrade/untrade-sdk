@@ -3,6 +3,7 @@
 ## Installation
 ```
 git clone https://github.com/ztuntrade/untade-sdk.git
+cd untrade-sdk
 pip install .
 ```
 
