@@ -1,10 +1,14 @@
 # Untrade SDK
 
 ## Installation
+Execute the git clone command:
 ```
-git clone https://github.com/ztuntrade/untade-sdk.git
-cd untrade-sdk
-pip install .
+git clone https://github.com/ztuntrade/untrade-sdk.git && cd untrade-sdk
+```
+
+Install the package using pip3:
+```
+pip3 install .
 ```
 
 To start using the Untrade API, first initialize the client:
