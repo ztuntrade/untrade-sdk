@@ -10,7 +10,7 @@ pip3 install .
 ```
 
 
-## Initialization
+## Initialiasation
 To start using the Untrade API, first initialize the client:
 
 ```python
