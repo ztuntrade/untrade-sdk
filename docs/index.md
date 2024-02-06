@@ -1,5 +1,3 @@
-# Untrade SDK
-
 ## Installation
 Execute the git clone command:
 ```
