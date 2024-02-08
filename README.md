@@ -161,5 +161,6 @@ Index,datetime,open,high,low,close,volume,signals
 - `4007`: Stop-Loss price > Entry price
 - `4008`: Only .csv files accepted
 - `4009`: Parent order not found
+- `4010`: Parent order already closed
 
 
