@@ -62,20 +62,13 @@ Closes an existing trading order.
 ```python
 client.close_order(
     symbol="BTCUSDT",
-    side="SELL",
-    type="MARKET",
     market="COIN-M",
-    quantity=100,
     parent_order_id="68b195ec-150e-47e1-8e01-694b719acdd8"
 )
 ```
 #### Parameters
 - `symbol` (string): The trading pair symbol (e.g., BTCUSDT, ETHUSDT).
-- `side` (string): 'BUY' or 'SELL'.
-- `type` (string): 'LIMIT' or 'MARKET'.
 - `market` (string): 'SPOT', 'COIN-M', or 'USD-M'.
-- `quantity` (float, optional): Trade quantity.
-- `price` (float, optional): Entry price (for LIMIT orders).
 - `parent_order_id` (string): The ID of the parent order being closed.
 
 ### Target Order
@@ -83,20 +76,17 @@ client.close_order(
 ```python
 client.create_target_order(
     symbol="BTCUSDT",
-    side="BUY",
-    type="MARKET",
+    type="TAKE_PROFIT_MARKET",
     market="COIN-M",
-    quantity=100,
+    stop_price=45000,
     parent_order_id="68b195ec-150e-47e1-8e01-694b719acdd8"
 )
 ```
 #### Parameters
 - `symbol` (string): The trading pair symbol (e.g., BTCUSDT, ETHUSDT).
-- `side` (string): 'BUY' or 'SELL'.
-- `type` (string): 'LIMIT' or 'MARKET'.
+- `type` (string): 'TAKE_PROFIT_MARKET'.
 - `market` (string): 'SPOT', 'COIN-M', or 'USD-M'.
-- `quantity` (float, optional): Trade quantity.
-- `price` (float, optional): Entry price (for LIMIT orders).
+- `stop_price` (float): Stop price for target.
 - `parent_order_id` (string): The ID of the parent order being closed.
 
 
@@ -105,21 +95,18 @@ client.create_target_order(
 ```python
 client.create_stoploss_order(
     symbol="BTCUSDT",
-    side="SELL",
-    type="MARKET",
+    type="STOP_MARKET",
     market="COIN-M",
-    quantity=100,
+    stop_price=35000,
     parent_order_id="68b195ec-150e-47e1-8e01-694b719acdd8"
 )
 ```
 
 #### Parameters
 - `symbol` (string): The trading pair symbol (e.g., BTCUSDT, ETHUSDT).
-- `side` (string): 'BUY' or 'SELL'.
-- `type` (string): 'LIMIT' or 'MARKET'.
+- `type` (string): 'STOP_MARKET'.
 - `market` (string): 'SPOT', 'COIN-M', or 'USD-M'.
-- `quantity` (float, optional): Trade quantity.
-- `price` (float, optional): Entry price (for LIMIT orders).
+- `stop_price` (float): Stop Price of stop-loss.
 - `parent_order_id` (string): The ID of the parent order being closed.
 
 
@@ -173,5 +160,6 @@ Index,datetime,open,high,low,close,volume,signals
 - `4006`: Target price > Entry price
 - `4007`: Stop-Loss price > Entry price
 - `4008`: Only .csv files accepted
+- `4009`: Parent order not found
 
 
