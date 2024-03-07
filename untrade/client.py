@@ -22,7 +22,7 @@ class Client(BaseClient):
     def _handle_response(response: requests.Response):
         if response.status_code == 200:
             return response.json()
-        return response.text
+        return "Backtest Timeout"
 
     def _handle_file(self, path, file_path, **kwargs):
         uri = self._create_api_uri(path)
