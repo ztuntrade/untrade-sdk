@@ -1,13 +1,24 @@
-#to perform backtest 
+# to perform backtest
 from untrade.client import Client
 from pprint import pprint
 
 client = Client()
 
-csv_file_path = "your_path.csv"  #must be in this formate:{datetime,open,high,low,close,volume,signals}
+csv_file_path = (
+    "YOUR-CSV"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
+)
 
-result = client.backtest(file_path=csv_file_path)
-pprint(result,sort_dicts = False)
+result = client.backtest(
+    file_path=csv_file_path,
+    leverage=1,
+)
+# Params and there default values
+# leverage = 1
+# chain = False
+# commission = 0.15
+
+
+pprint(result, sort_dicts=False)
 
 
 ## File Requirements
