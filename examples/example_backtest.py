@@ -4,7 +4,9 @@ from untrade.client import Client
 
 client = Client()
 
-csv_file_path = "/Users/siddharthjain/Downloads/zelta_tech_7Feb_1.csv"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
+csv_file_path = (
+    "Your-CSV"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
+)
 
 result = client.backtest(
     file_path=csv_file_path,
