@@ -1,24 +1,24 @@
 # to perform backtest
 from untrade.client import Client
-from pprint import pprint
+
 
 client = Client()
 
-csv_file_path = (
-    "YOUR-CSV"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
-)
+csv_file_path = "/Users/siddharthjain/Downloads/zelta_tech_7Feb_1.csv"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
 
 result = client.backtest(
     file_path=csv_file_path,
     leverage=1,
 )
+
+# Result is a generator object that can be iterated over to get the results
+for i in result:
+    print(i)
+
 # Params and there default values
 # leverage = 1
 # chain = False
 # commission = 0.15
-
-
-pprint(result, sort_dicts=False)
 
 
 ## File Requirements
