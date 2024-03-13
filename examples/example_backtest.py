@@ -1,21 +1,37 @@
-# to perform backtest
 from untrade.client import Client
+from pprint import pprint
 
 
-client = Client()
+def perform_backtest(csv_file_path):
+    """
+    Perform backtesting using the untrade SDK.
 
-csv_file_path = (
-    "Your-CSV"  # must be in this formate:{datetime,open,high,low,close,volume,signals}
-)
+    Parameters:
+    - csv_file_path (str): Path to the CSV file containing historical price data and signals.
 
-result = client.backtest(
-    file_path=csv_file_path,
-    leverage=1,
-)
+    Returns:
+    - result (generator): Result is a generator object that can be iterated over to get the backtest results.
+    """
+    # Create an instance of the untrade client
+    client = Client()
 
-# Result is a generator object that can be iterated over to get the results
-for i in result:
-    print(i)
+    # Perform backtest using the provided CSV file path
+    result = client.backtest(
+        file_path=csv_file_path,
+        leverage=1,  # Adjust leverage as needed
+    )
+
+    return result
+
+
+# Example usage:
+csv_file_path = "YOUR_CSV"
+backtest_result = perform_backtest(csv_file_path)
+last_value = None
+for value in backtest_result:
+    last_value = value
+print(last_value)
+
 
 # Params and there default values
 # leverage = 1
