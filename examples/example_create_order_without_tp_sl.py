@@ -1,8 +1,9 @@
-#create_order_without_target_stop_loss
+# create_order_without_target_stop_loss
 from untrade.client import Client
 from pprint import pprint
 
 client = Client()
+
 
 def create_order_without_target_stop_loss():
     try:
@@ -12,13 +13,15 @@ def create_order_without_target_stop_loss():
             type="MARKET",
             market="COIN-M",
             quantity=100,
-            leverage=10
+            leverage=10,
         )
         print("Order Created Successfully:")
-        pprint(response,sort_dicts = False)
+        pprint(response, sort_dicts=False)
 
     except Exception as e:
         print(f"Error creating order: {e}")
+
+
 create_order_without_target_stop_loss()
 
 # Parameters:

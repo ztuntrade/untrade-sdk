@@ -17,6 +17,7 @@ def perform_backtest(csv_file_path):
 
     # Perform backtest using the provided CSV file path
     result = client.backtest(
+        # jupyter_id="test12345",
         file_path=csv_file_path,
         leverage=1,  # Adjust leverage as needed
     )
@@ -25,9 +26,10 @@ def perform_backtest(csv_file_path):
 
 
 # Example usage:
-csv_file_path = "YOUR_CSV"
+csv_file_path = "your csv"
 backtest_result = perform_backtest(csv_file_path)
 last_value = None
+print(backtest_result)  # in case there is a error in the code
 for value in backtest_result:
     last_value = value
 print(last_value)

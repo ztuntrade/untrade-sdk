@@ -118,6 +118,12 @@ Use the following method to initiate a backtest:
 client.backtest(file_path="/your/path")
 ```
 
+## Parameters
+
+- `leverage` (int): The leverage for the trade (for non-SPOT markets). Default value is 1.
+- `chain` (bool): Specifies whether to use chain trading(Reverse orders). Default value is False.
+- `commission` (float): The commission rate for the trade. Default value is 0.15.
+
 ## File Requirements
 
 **Format:** CSV (Comma-Separated Values)
