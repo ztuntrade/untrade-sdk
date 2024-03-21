@@ -168,5 +168,7 @@ Index,datetime,open,high,low,close,volume,signals
 - `4008`: Only .csv files accepted
 - `4009`: Parent order not found
 - `4010`: Parent order already closed
+- `4011`: Backtest error
+- `4012`: jupyter_id not found
 
 
